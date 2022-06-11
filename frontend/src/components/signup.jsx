@@ -7,7 +7,7 @@ import Validate from './validate';
 
 function Signup({submitForm}) {
 
-  const[name, setName] = useState('');
+  const[username, setName] = useState('');
   const[email, setEmail] = useState('');
   const[password, setPassword] = useState('');
   const[cPassword, setcPassword] = useState('');
@@ -62,7 +62,7 @@ function Signup({submitForm}) {
          <form action="/welcomeSignUp" onSubmit={handleSubmit} >
              <label className='text-white block pt-12'>Username</label>
              <i className='text-white text-3xl absolute pt-2' ><FaUserCircle /></i>
-             <input type="text" name='username' className='border-b-2 border-b-white bg-inherit w-[22vw] h-12 text-white text-lg pl-14'  value={name} onChange={handleNameChange}/>
+             <input type="text" name='username' className='border-b-2 border-b-white bg-inherit w-[22vw] h-12 text-white text-lg pl-14'   value={username} onChange={handleNameChange}/>
              {errors.username && <p className="error">{errors.username}</p>}
              <label className='text-white block pt-8'>Email</label>
              <i className='text-white text-3xl absolute pt-2'><FaEnvelope /></i>
@@ -76,9 +76,9 @@ function Signup({submitForm}) {
              <i className='text-white text-3xl absolute pt-2'><FaCheckCircle /></i>
              <input type="password" className='border-b-2 border-b-white bg-inherit w-[22vw] h-12 text-white text-lg pl-14'value={cPassword} onChange={handleConfPasswordChange}/>
              {errors.confpassword && <p className="error">{errors.confpassword}</p>}
-             <Link to="/welcomeSignUp">
+             {/* <Link to="/welcomeSignUp"> */}
              <button  className='h-20 w-48 bg-[#BE4502] block mt-10 text-white text-xl ml-24' type='submit'>Sign Up</button>
-             </Link>
+             {/* </Link> */}
              <p className='text-white pl-20 pt-8 '>Already have an account?<Link to="/login"><a className='text-[#BE4502] '>Log in</a></Link></p>
          </form>
       </div>
