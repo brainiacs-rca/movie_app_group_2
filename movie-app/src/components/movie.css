@@ -1,9 +1,13 @@
+
 .image{
     height: 680px;
     margin-left: -113px;
     width: 500px;
     overflow: hidden;
     margin-top:20px;
+}
+body{
+    overflow-x: hidden;
 }
 
 
@@ -17,6 +21,7 @@
     display: block;
 background-color: black;
 padding-top:30px ;
+
 }
 .lines{
  display: flex;
@@ -52,4 +57,12 @@ padding-top:30px ;
 .btm5 i{
     color: #BE4502;
     font-size: 25px;
+}
+.movie{
+     /* width: 700px;
+     height: 500px;
+    margin-left: auto;
+    margin-right: auto; */
+    /* position: absolute; */
+    z-index: 3;
 }
