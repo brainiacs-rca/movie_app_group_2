@@ -46,7 +46,7 @@ function Signup() {
     })
     // setDataIsCorrect(true);
     const register = async()=>{
-      await fetch("http://localhost:4000/api/auth/register",{
+      await fetch("http://localhost:4000/api/auth/signup",{
          method:"POST",
          // mode: "no-cors",
          headers: {
