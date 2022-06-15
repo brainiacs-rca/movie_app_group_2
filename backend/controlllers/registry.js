@@ -41,26 +41,6 @@ exports.signup = async (req, res) => {
       if (err) throw err
       if (!resp) return res.status(400).send('Enter valid email address')
       const current = await createToken(req.body, 'test')
-      const mailOptions = {
-        to: req.body.email,
-        subject: 'continue signing up',
-        text: `click this link below to continue\n http://localhost:3000/verfiy/${
-          current.split('.')[2]
-        }`,
-      }
-      transporter.sendMail(mailOptions, async (error, info) => {
-        if (error) {
-          return res.status(400).send('something went wrong')
-        }
-        if (info.accepted.includes(req.body.email)) {
-          res
-            .status(201)
-            .cookie('current', current.split('.').slice(0, 2), {
-              maxAge: 300000,
-            })
-            .send('go add see your email address hurry up it expires in 5m')
-        }
-      })
     })
   } catch (error) {
     console.log(error)
@@ -89,7 +69,7 @@ exports.login = async (req, res) => {
     if (!avilabelUser) return res.status(403).send('Invalid email or password')
     const isValid = await bcrypt.compare(password, avilabelUser.password)
     if (!isValid) return res.status(403).send('invalid email or password')
-    const token = await createToken({ id: avilabelUser._id }, 'register')
+    const token = await createToken({ id: avilabelUser._id },'register')
     res.cookie('token', token)
     res.status(200).send(token)
   } catch (err) {
