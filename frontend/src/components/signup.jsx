@@ -18,9 +18,7 @@ function Signup() {
   const [dataIsCorrect, setDataIsCorrect] = useState(false);
 
   const [data, setData] = useState({
-
     fullname: "",
-    cpassword: "",
     password: "",
     email: ""
   })
@@ -40,7 +38,6 @@ function Signup() {
     e.preventDefault();
     setData({
       fullname: fullname,
-      cpassword: cpassword,
       password: password,
       email: email
     })
@@ -57,8 +54,6 @@ function Signup() {
              return response.json()
        }).then((data)=>{
          console.log(data)
-       }).catch((error)=>{
-         console.log(error)
        })
      
      }
