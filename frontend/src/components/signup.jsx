@@ -10,7 +10,7 @@ import WelcomeSignUp from './welcomeSignUp'
 function Signup() {
 
   const [email, setemail] = useState();
-  const [username, setusername] = useState();
+  const [fullname, setfullname] = useState();
   const [password, setPassword] = useState();
   const [cpassword, setcpassword] = useState();
   const navigate = useNavigate("")
@@ -19,7 +19,7 @@ function Signup() {
 
   const [data, setData] = useState({
 
-    username: "",
+    fullname: "",
     cpassword: "",
     password: "",
     email: ""
@@ -28,7 +28,7 @@ function Signup() {
     setemail(e.target.value);
   }
   const handleNameChange = e => {
-    setusername(e.target.value);
+    setfullname(e.target.value);
   }
   const handlePasswordChange = e => {
     setPassword(e.target.value);
@@ -39,7 +39,7 @@ function Signup() {
   const handleSubmit = e => {
     e.preventDefault();
     setData({
-      username: username,
+      fullname: fullname,
       cpassword: cpassword,
       password: password,
       email: email
@@ -63,9 +63,9 @@ function Signup() {
      
      }
     register();   
-    setErrors(Validation(username, password, email, cpassword));
+    setErrors(Validation(fullname, password, email, cpassword));
     setemail('');
-    setusername('');
+    setfullname('');
     setPassword('');
     setcpassword('');
     
@@ -73,16 +73,16 @@ function Signup() {
   
 
   }
-  const Validation = ( username, password, email, cpassword) => {
-    console.log( username, password, email, cpassword)
+  const Validation = ( fullname, password, email, cpassword) => {
+    console.log( fullname, password, email, cpassword)
     email = email === "" ? null : email;
-    username = username === "" ? null : username;
+    fullname = fullname === "" ? null : fullname;
     password = password === "" ? null : password;
     cpassword = cpassword === "" ? null : cpassword;
 
  
-    if (!username) {
-      errors.username = "username is required."
+    if (!fullname) {
+      errors.fullname = "fullname is required."
     }
     if (!password) {
       errors.password = "The password is required."
@@ -123,10 +123,10 @@ function Signup() {
       <div className='h-[90vh] w-[35vw] bg-black opacity-[0.7]  ml-auto mr-auto block pl-28 pt-12'>
           <h1 className='text-[#BE4502] text-4xl pl-16'>WELCOME TO M<span className='text-white text-5xl'>V</span>T</h1>
          <form action="/validate" onSubmit={handleSubmit} >
-             <label className='text-white block pt-12'>Username</label>
+             <label className='text-white block pt-12'>Fullname</label>
              <i className='text-white text-3xl absolute pt-2' ><FaUserCircle /></i>
-             <input type="text" name='username' className='border-b-2 border-b-white bg-inherit w-[22vw] h-12 text-white text-lg pl-14'   value={username} onChange={handleNameChange}/>
-             {errors.username && <p className="error">{errors.username}</p>}
+             <input type="text" name='fullname' className='border-b-2 border-b-white bg-inherit w-[22vw] h-12 text-white text-lg pl-14'   value={fullname} onChange={handleNameChange}/>
+             {errors.fullname && <p className="error">{errors.fullname}</p>}
              <label className='text-white block pt-8'>Email</label>
              <i className='text-white text-3xl absolute pt-2'><FaEnvelope /></i>
              <input type="email" className='border-b-2 border-b-white bg-inherit w-[22vw] h-12 text-white text-lg pl-14' value={email} onChange={handleEmailChange}/>
