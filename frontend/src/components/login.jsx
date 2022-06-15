@@ -23,11 +23,9 @@ function Login() {
  
   const handleSubmit = event =>{
     event.preventDefault();
-
     setName('');
     setEmail('');
     setPassword('');
-  
   }
   return (
       <div className='h-screen'>

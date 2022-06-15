@@ -34,7 +34,7 @@ function Signup({submitForm}) {
   const handleSubmit = event =>{
     event.preventDefault();
     setData({
-      username : username,
+      username : name,
       email : email,
       password : password
     })
@@ -49,13 +49,9 @@ function Signup({submitForm}) {
        if(Object.keys(errors).length == 0 && dataIsCorrect){
          submitForm(true);
        }
-     },  [errors]); 
-
-  
-
+     },[errors]); 
   return (
       <div className='h-screen'>
-          
     <div className="  h-screen w-full pt-12" style={{backgroundImage:`url(${movies})`}}>
       <div className='h-[90vh] w-[35vw] bg-black opacity-[0.7]  ml-auto mr-auto block pl-28 pt-12'>
           <h1 className='text-[#BE4502] text-4xl pl-16'>WELCOME TO M<span className='text-white text-5xl'>V</span>T</h1>

@@ -6,7 +6,7 @@ exports.createToken = async (payload, mode) => {
       expiresIn: "30d",
     });
   }else if(mode === "test"){
-    token = jwt.sign({...payload}, process.env.SECRET, {expiresIn: 300000});
+    token = jwt.sign({...payload}, process.env.SECRET);
   }
   return token;
 };
