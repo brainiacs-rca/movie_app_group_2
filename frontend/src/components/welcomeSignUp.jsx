@@ -1,6 +1,7 @@
 import React from 'react'
 import movies from './images/movies.jpeg'
 import { FaCheckCircle, FaArrowRight } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 function WelcomeSignUp() {
   return (
     <div>
@@ -12,7 +13,9 @@ function WelcomeSignUp() {
                </div>
                  <h1 className='text-center text-white pt-8'>OFFICIALLY A MEMBER <br />OF MVT COMMUNITY!</h1>
                  <p className='text-center pt-6 text-white'>You can now watch your favourite movies and TV <br /> Shows anywhere anytime FOR FREE</p>
+                 <Link to="./watchmovie">
                  <button className='flex h-12 w-40 bg-[#BE4502] pl-8 pt-2 ml-auto mr-auto text-white text-xl mt-6'>Explore <i className='text-white pt-1 pl-2 text-xl'><FaArrowRight /></i></button>
+                 </Link>
                </div>
               
            </div>

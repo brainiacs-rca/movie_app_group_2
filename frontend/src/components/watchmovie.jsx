@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 // import logo from './logo.svg'
-import "./App.css";
+import "../App.css";
 import movieTrailer from "movie-trailer";
 import Youtube from 'react-youtube';
-import Head from "./components/head";
-import Body from "./components/body";
-import Movie from "./components/movie";
+import Head from "../components/head";
+import Body from "../components/body";
+import Movie from "../components/movie";
 
   const featured_api =
   "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
 const mv_api=""
-function App() {
+function Watchmovie() {
   
   const [movies, setMovies] = useState([]);
   const [trailerUrl,setTrailerUrl] = useState("");
@@ -78,4 +78,4 @@ function App() {
   );
 }
 
-export default App;
+export default Watchmovie;

@@ -1,4 +1,4 @@
-  // tailwind.config.js
+// tailwindcss.config.js
   module.exports = {
     content: [
       "./src/**/*.{js,jsx,ts,tsx}",
@@ -14,3 +14,12 @@
     },
     plugins: [],
   }
+  // module.exports = {
+  //   content: [
+  //     "./src/**/*.{js,jsx,ts,tsx}",
+  //   ],
+  //   theme: {
+  //     extend: {},
+  //   },
+  //   plugins: [],
+  // }

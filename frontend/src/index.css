@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .error{
-    color: rgb(230, 5, 5);
+    color: red;
 }
