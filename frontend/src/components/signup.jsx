@@ -115,29 +115,29 @@ function Signup() {
       <div className='h-screen'>
           
     <div className="  h-screen w-full pt-12" style={{backgroundImage:`url(${movies})`}}>
-      <div className='h-[90vh] w-[35vw] bg-black opacity-[0.7]  ml-auto mr-auto block pl-28 pt-12'>
-          <h1 className='text-[#BE4502] text-4xl pl-16'>WELCOME TO M<span className='text-white text-5xl'>V</span>T</h1>
+      <div className='h-auto pb-8 w-1/3 bg-black opacity-75  ml-auto mr-auto block pl-28 pt-12'>
+          <h1 className='text-yellow-700 text-4xl pl-16'>WELCOME TO M<span className='text-white text-5xl'>V</span>T</h1>
          <form action="/validate" onSubmit={handleSubmit} >
              <label className='text-white block pt-12'>Fullname</label>
-             <i className='text-white text-3xl absolute pt-2' ><FaUserCircle /></i>
+             <i className='text-white text-3xl absolute pt-2 pl-4' ><FaUserCircle /></i>
              <input type="text" name='fullname' className='border-b-2 border-b-white bg-inherit w-[22vw] h-12 text-white text-lg pl-14'   value={fullname} onChange={handleNameChange}/>
              {errors.fullname && <p className="error">{errors.fullname}</p>}
              <label className='text-white block pt-8'>Email</label>
-             <i className='text-white text-3xl absolute pt-2'><FaEnvelope /></i>
+             <i className='text-white text-3xl absolute pt-2 pl-4'><FaEnvelope /></i>
              <input type="email" className='border-b-2 border-b-white bg-inherit w-[22vw] h-12 text-white text-lg pl-14' value={email} onChange={handleEmailChange}/>
              {errors.email && <p className="error">{errors.email}</p>}
              <label className='text-white block pt-8'>Password</label>
-             <i className='text-white text-3xl absolute pt-2'><FaLock /></i>
+             <i className='text-white text-3xl absolute pt-2 pl-4'><FaLock /></i>
              <input type="password" className='border-b-2 border-b-white bg-inherit w-[22vw] h-12 text-white text-lg pl-14'value={password} onChange={handlePasswordChange}/>
              {errors.password && <p className="error">{errors.password}</p>}
              <label className='text-white block pt-8'>Confirm Password</label>
-             <i className='text-white text-3xl absolute pt-2'><FaCheckCircle /></i>
+             <i className='text-white text-3xl absolute pt-2 pl-4'><FaCheckCircle /></i>
              <input type="password" className='border-b-2 border-b-white bg-inherit w-[22vw] h-12 text-white text-lg pl-14'value={cpassword} onChange={handleConfPasswordChange}/>
              {errors.confpassword && <p className="error">{errors.confpassword}</p>}
              {/* <Link to="/welcomeSignUp"> */}
-             <button  className='h-20 w-48 bg-[#BE4502] block mt-10 text-white text-xl ml-24' type='submit'>Sign Up</button>
+             <button  className='h-20 w-48 bg-yellow-700 block mt-10 text-white text-xl ml-24' type='submit'>Sign Up</button>
              {/* </Link> */}
-             <p className='text-white pl-20 pt-8 '>Already have an account?<Link to="/login"><a className='text-[#BE4502] '>Log in</a></Link></p>
+             <p className='text-white pl-20 pt-8 '>Already have an account?<Link to="/login"><a className='text-yellow-700  hover:underline'>Log in</a></Link></p>
          </form>
       </div>
  
